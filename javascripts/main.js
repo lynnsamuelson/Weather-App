@@ -15,8 +15,10 @@ requirejs.config({
   }
 });
 
-requirejs(["dependencies", "firebase", "auth"], 
-  function(dependencies, firebase, auth) {
+requirejs(["dependencies", "user-input", "firebase", "auth"], 
+  function(dependencies, userInput, firebase, auth) {
+
+  var $ = require("jquery");
 
   var ref = new Firebase("https://dld-weather.firebaseio.com/");
   var authData = ref.getAuth();
@@ -36,4 +38,13 @@ requirejs(["dependencies", "firebase", "auth"],
     // require(["core_list"], function() {});
   }
   console.log(authData);
+
+  var zip = "";
+  $("#zip").on('click', function() {
+    zip = $('#searchField').val();
+    console.log("zip", zip);
+      if (zip.length !== 5) {
+      console.log("Please enter a 5-digit code.");
+     }
+  });
 });
