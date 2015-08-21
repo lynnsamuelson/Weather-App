@@ -10,7 +10,9 @@ requirejs.config({
     "bootstrap": ["jquery"]  }
 });
 
-requirejs(["dependencies"], 
-  function(dependencies) {
+requirejs(["dependencies", "get-data", "user-input"], 
+  function(dependencies, getData, user) {
+    
+
 
 });
