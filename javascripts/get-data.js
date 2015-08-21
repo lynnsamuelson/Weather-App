@@ -13,9 +13,19 @@ define(function(require) {
 		    method: "GET",
 		    data: JSON
 		  }).done(function(data) {
-		     console.log("weather", data);
+         
+         var weather = {
+          temp: data.main.temp,
+          pressure: data.main.pressure,
+          current: data.weather,
+          speed: data.wind.speed,
+          coord: data.coord
+         };
+
+         console.log(weather);
+
 		     require(['hbs!../templates/weather'], function(template) {
-		     		$('.weatherData').html(template(data));
+		     		$('.weatherData').html(template(weather));
 		     });
 		  });
     }
