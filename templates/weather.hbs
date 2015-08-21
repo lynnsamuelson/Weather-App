@@ -1,0 +1,27 @@
+<div class="col-xs-12 col-md-6">
+  <a class="thumbnail">
+  <div class="caption">
+	 {{#each main}}
+	  <div>	
+  	  <h2>{{temp}}</h2>
+  	  <h3>{{pressure}}</h3>
+  	</div>
+  	{{/each}}
+  	{{#each this}}
+	  <div>	
+  	  <p>{{main}}</p>
+  	  <p>{{description}}</p>
+  	</div>
+  	{{/each}}
+  	{{#each wind}}
+  	<div>
+  	<p>{{speed}}</p>
+  	</div>
+  	{{/each}}
+		<div>
+		  <button>Three Day</button>
+		  <button>Seven Day</button>
+		</div>
+	</div>  
+  </a>
+</div>  

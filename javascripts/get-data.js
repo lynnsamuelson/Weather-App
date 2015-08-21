@@ -14,6 +14,9 @@ define(function(require) {
 		    data: JSON
 		  }).done(function(data) {
 		     console.log("weather", data);
+		     require(['hbs!../templates/weather'], function(template) {
+		     		$('.weatherData').html(template(data));
+		     });
 		  });
     }
   });  
