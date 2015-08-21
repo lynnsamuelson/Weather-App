@@ -14,15 +14,15 @@ define(function(require) {
 		    data: JSON
 		  }).done(function(data) {
          
-         var weather = {
+         var weather = [{
           temp: data.main.temp,
           pressure: data.main.pressure,
           current: data.weather,
           speed: data.wind.speed,
           coord: data.coord
-         };
+         }];
 
-         console.log(weather);
+         console.log("weather :", weather);
 
 		     require(['hbs!../templates/weather'], function(template) {
 		     		$('.weatherData').html(template(weather));
