@@ -15,8 +15,8 @@ requirejs.config({
   }
 });
 
-requirejs(["dependencies", "user-input", "firebase", "auth"], 
-  function(dependencies, userInput, firebase, auth) {
+requirejs(["dependencies", "user-input", "firebase", "auth", "get-data"], 
+  function(dependencies, userInput, firebase, auth, getData) {
 
   var $ = require("jquery");
 
@@ -38,13 +38,4 @@ requirejs(["dependencies", "user-input", "firebase", "auth"],
     // require(["core_list"], function() {});
   }
   console.log(authData);
-
-  var zip = "";
-  $("#zip").on('click', function() {
-    zip = $('#searchField').val();
-    console.log("zip", zip);
-      if (zip.length !== 5) {
-      console.log("Please enter a 5-digit code.");
-     }
-  });
 });
