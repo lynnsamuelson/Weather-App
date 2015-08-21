@@ -15,8 +15,8 @@ requirejs.config({
   }
 });
 
-requirejs(["dependencies", "user-input", "firebase", "auth", "get-data"], 
-  function(dependencies, userInput, firebase, auth, getData) {
+requirejs(["dependencies", "firebase", "auth", "get-data"], 
+  function(dependencies, firebase, auth, getData) {
 
   var $ = require("jquery");
 

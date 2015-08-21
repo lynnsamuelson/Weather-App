@@ -13,9 +13,8 @@ define(function(require) {
 		    method: "GET",
 		    data: JSON
 		  }).done(function(data) {
-		      console.log("weather", data);
+		     console.log("weather", data);
 		  });
     }
   });  
 });
-
