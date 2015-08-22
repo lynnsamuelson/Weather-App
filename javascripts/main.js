@@ -15,8 +15,8 @@ requirejs.config({
   }
 });
 
-requirejs(["dependencies", "firebase", "auth", "get-data"], 
-  function(dependencies, firebase, auth, getData) {
+requirejs(["dependencies", "firebase", "auth", "get-data", "forecast"], 
+  function(dependencies, firebase, auth, getData, forecast) {
 
   var $ = require("jquery");
 
@@ -38,4 +38,5 @@ requirejs(["dependencies", "firebase", "auth", "get-data"],
     // require(["core_list"], function() {});
   }
   console.log(authData);
+
 });

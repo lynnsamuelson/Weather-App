@@ -1,6 +1,6 @@
 define(function(require) {
   var $ = require("jquery");
-  
+  var lat = "";
   $("#zip").on('click', function() {
     zip = $('#searchField').val();
     console.log("zip", zip);
@@ -14,20 +14,26 @@ define(function(require) {
 		    data: JSON
 		  }).done(function(data) {
          
-         var weather = {
+         var weather = [{
           temp: data.main.temp,
           pressure: data.main.pressure,
           current: data.weather,
           speed: data.wind.speed,
-          coord: data.coord
-         };
+          coordLat: data.coord.lat,
+          coordLon: data.coord.lon
+         }];
+         
+         
+         //var lon = data.coord.lon;
+         //console.log("lon",lon);
+         //console.log("weather", weather);
 
-         console.log(weather);
+         
 
-		     require(['hbs!../templates/weather'], function(template) {
-		     		$('.weatherData').html(template(weather));
-		     });
-		  });
+         require(['hbs!../templates/weather'], function(template) {
+            $('.weatherData').html(template(weather));
+         });
+      });
     }
   });  
 });
