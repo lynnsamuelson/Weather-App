@@ -16,8 +16,8 @@ requirejs.config({
   }
 });
 
-requirejs(["dependencies", "firebase", "auth", "get-data", "populate", "click", "threeDay", "threeDayBtn", "populateThreeDay"], 
-  function(dependencies, firebase, auth, getData, populate, click, threeDay, threeDayBtn, populateThreeDay) {
+requirejs(["dependencies", "firebase", "auth", "get-data", "populate", "click", "threeDay", "threeDayBtn", "populateThreeDay", "share", "save-data", "showSaved"], 
+  function(dependencies, firebase, auth, getData, populate, click, threeDay, threeDayBtn, populateThreeDay, share, saveData, showSaved) {
 
   var $ = require("jquery");
 

@@ -6,5 +6,5 @@ define(function(require){
 		require(['hbs!../templates/threeDayHbs'], function(template) {
 			$('.weatherData').append(template(weather));
 		});	
-	}
+	};
 });

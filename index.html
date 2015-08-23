@@ -4,8 +4,13 @@
   <meta charset="UTF-8">
   <title>Weather App</title>
   <link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <meta property="og:url"           content="https://dld-weather.firebaseio.com/" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Weather App" />
+  <meta property="og:description"   content="Weather App" />
 </head>
 <body>
+<div id="fb-root"></div>
 <!-- BEGIN NAV BAR -->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -17,10 +22,15 @@
         <input type="text" class="form-control" id="searchField" placeholder="Search" list="tripOutput" autofocus>
       </div>
       <button id="zip" type="button" class="btn btn-default searchZip">Search by Zip</button>
+      <a class="twitter-share-button"
+        href="https://twitter.com/intent/tweet">
+      Tweet</a>
+    <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
     </form>
   </div>
 </nav>
 <!-- END NAV BAR -->
+<button type="button" id="showSaved">Show Saved Forecasts</button>
 
 <div class="weatherData">
   <div id="postWeatherTest"></div>

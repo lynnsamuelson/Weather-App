@@ -27,6 +27,6 @@ define(function(require){
 		  	populate(data);
 		  });
 		}  
-	};	
+	}
 	
 });

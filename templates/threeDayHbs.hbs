@@ -2,13 +2,15 @@
 <div class="col-xs-12 col-md-6">
   <div class="caption">	 
 	  <div>	
-  	  <h2>{{this.main.temp}}</h2>
+  	  <h2>{{this.main.temp}}&deg;F</h2>
   	  <h3>{{this.weather.[0].main}}</h3>
   	  <ul>
-				<li>{{this.main.pressure}}</li>
+				<li>{{this.main.pressure}}hPa</li>
 				<li>{{this.wind.speed}}</li>
+        <li>{{this.dt_txt}}</li>
   	  </ul>
   	</div>
+    <button id="saveForecast">Save This Forecast</button>
   </div>
 </div>  
 {{/each}}

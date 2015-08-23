@@ -4,8 +4,6 @@ define(function(require){
 	var $ = require("jquery");
 	var populateThreeDay = require("populateThreeDay");
 
-	console.log("hello world");
-
 	var dayCounter = 1;
 
 	$(document).on("click", ".threeDayBtn", function() {
@@ -22,11 +20,11 @@ define(function(require){
 			if (dayCounter === 3) {
 				dayCounter += 4;
 				populateThreeDay(data.slice(3,7));
-			};
+			}
 			if (dayCounter === 1) {	
 				dayCounter += 6;
 		    populateThreeDay(data.slice(1,7));
-			};
+			}
 		});
 	});
 

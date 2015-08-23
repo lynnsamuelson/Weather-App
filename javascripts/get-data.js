@@ -14,12 +14,12 @@ define(function(require) {
 		}).done(function(data) {	
 			console.log("data.dt :", data.dt);
 	    var weather = [{
-	    date: new Date(data.dt),
-	    temp: kelToFah(data.main.temp),
-	    pressure: data.main.pressure,
-	    current: data.weather,
-	    speed: data.wind.speed,
-	    coord: data.coord.lat + "&lon=" + data.coord.lon
+  	    date: new Date(data.dt),
+  	    temp: kelToFah(data.main.temp),
+  	    pressure: data.main.pressure,
+  	    current: data.weather,
+  	    speed: data.wind.speed,
+  	    coord: data.coord.lat + "&lon=" + data.coord.lon
 	    }];
 	    console.log("current Date :", new Date());
 	    deferred.resolve(weather);
