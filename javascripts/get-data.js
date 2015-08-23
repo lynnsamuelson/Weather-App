@@ -1,33 +1,29 @@
 define(function(require) {
-  var $ = require("jquery");
-  
-  $("#zip").on('click', function() {
-    zip = $('#searchField').val();
-    console.log("zip", zip);
-    if (zip.length !== 5) {
-      console.log("Please enter a 5-digit code.");
-    } else {
-		  console.log("argument :", zip);
-		  $.ajax({
-		    url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us&APPID=514959dd42853402865197cec43244f4",
-		    method: "GET",
-		    data: JSON
-		  }).done(function(data) {
-         
-         var weather = [{
-          temp: data.main.temp,
-          pressure: data.main.pressure,
-          current: data.weather,
-          speed: data.wind.speed,
-          coord: data.coord
-         }];
+  return function (zip) {
+  	var $ = require("jquery");
+  	var Q = require("q");
+  	function kelToFah (kelvin) {
+  		return Math.round((kelvin * (9/5)) - 459.67);
+  	}
+  	var deferred = Q.defer();
 
-         console.log("weather :", weather);
-
-		     require(['hbs!../templates/weather'], function(template) {
-		     		$('.weatherData').html(template(weather));
-		     });
-		  });
-    }
-  });  
+		$.ajax({
+		  url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us&APPID=514959dd42853402865197cec43244f4",
+		  method: "GET",
+		  data: JSON
+		}).done(function(data) {	
+			console.log("data.dt :", data.dt);
+	    var weather = [{
+	    date: new Date(data.dt),
+	    temp: kelToFah(data.main.temp),
+	    pressure: data.main.pressure,
+	    current: data.weather,
+	    speed: data.wind.speed,
+	    coord: data.coord.lat + "&lon=" + data.coord.lon
+	    }];
+	    console.log("current Date :", new Date());
+	    deferred.resolve(weather);
+		}); 
+		return deferred.promise;
+  };
 });

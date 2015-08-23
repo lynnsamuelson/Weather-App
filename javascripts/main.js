@@ -5,7 +5,8 @@ requirejs.config({
     'hbs': '../lib/bower_components/require-handlebars-plugin/hbs',
     'bootstrap': '../lib/bower_components/bootstrap/dist/js/bootstrap.min',
     'firebase': '../lib/bower_components/firebase/firebase',
-    'lodash': '../lib/bower_components/lodash/lodash.min'
+    'lodash': '../lib/bower_components/lodash/lodash.min',
+    'q': '../lib/bower_components/q/q' 
   },
   shim: {
     'bootstrap': ['jquery'],
@@ -15,8 +16,8 @@ requirejs.config({
   }
 });
 
-requirejs(["dependencies", "firebase", "auth", "get-data"], 
-  function(dependencies, firebase, auth, getData) {
+requirejs(["dependencies", "firebase", "auth", "get-data", "populate", "click", "threeDay", "threeDayBtn", "populateThreeDay"], 
+  function(dependencies, firebase, auth, getData, populate, click, threeDay, threeDayBtn, populateThreeDay) {
 
   var $ = require("jquery");
 
