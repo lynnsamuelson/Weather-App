@@ -7,7 +7,9 @@
   	  <h3>{{this.weather.[0].main}}</h3>
   	  <ul>
 				<li>{{this.pressure}}hPa</li>
-				<li>{{this.speed}}m/s</li>
+        <li>{{this.speed}}m/s</li>
+        <li>Max temp: {{this.temp.max}}&deg;F</li>
+				<li>Min temp: {{this.temp.min}}&deg;F</li>        
   	  </ul>
   	</div>
     <button id="saveForecast">Save This Forecast</button>

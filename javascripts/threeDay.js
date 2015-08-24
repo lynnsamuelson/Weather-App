@@ -27,12 +27,20 @@ define(function(require) {
 		  data: JSON
 		}).done(function(data) {	
 			var weather = data.list;
-			for (var i = 0; i < weather.length; i++) {
-				weather[i].temp.day = 
-				kelToFah(weather[i].temp.day);
+      console.log(weather);
+      for (var i = 0; i < weather.length; i++) {
+        weather[i].temp.day = 
+        kelToFah(weather[i].temp.day);
+
+        weather[i].temp.max = 
+        kelToFah(weather[i].temp.max);
+
+        weather[i].temp.min = 
+        kelToFah(weather[i].temp.min)
+
         weather[i].dt = 
         timeConverter(weather[i].dt);
-			}
+      }
 	    deferred.resolve(weather);
 		}); 
 		return deferred.promise;

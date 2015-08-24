@@ -7,7 +7,6 @@ define(function(require){
 	var dayCounter = 1;
 
 	$(document).on("click", ".threeDayBtn", function() {
-		console.log("click");
 		dayCounter += 2;
 		threeDay(this.id).then(function(data){
 		  populateThreeDay(data.slice(1,3));
@@ -15,7 +14,6 @@ define(function(require){
 	});
 
 	$(document).on("click", ".sevenDayBtn", function() {
-		console.log("click");
 		threeDay(this.id).then(function(data){
 			if (dayCounter === 3) {
 				dayCounter += 4;

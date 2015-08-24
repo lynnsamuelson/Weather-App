@@ -11,8 +11,7 @@ define(function(require) {
 		  url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us&APPID=514959dd42853402865197cec43244f4",
 		  method: "GET",
 		  data: JSON
-		}).done(function(data) {	
-			console.log("data.dt :", data.dt);
+		}).done(function(data) {
 	    var weather = [{
   	    date: new Date(data.dt),
   	    temp: kelToFah(data.main.temp),
@@ -21,7 +20,7 @@ define(function(require) {
   	    speed: data.wind.speed,
   	    coord: data.coord.lat + "&lon=" + data.coord.lon
 	    }];
-	    console.log("current Date :", new Date());
+      console.log(weather);
 	    deferred.resolve(weather);
 		}); 
 		return deferred.promise;
