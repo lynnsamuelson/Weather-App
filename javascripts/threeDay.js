@@ -27,7 +27,6 @@ define(function(require) {
 		  data: JSON
 		}).done(function(data) {	
 			var weather = data.list;
-			console.log("weather :", weather);
 			for (var i = 0; i < weather.length; i++) {
 				weather[i].temp.day = 
 				kelToFah(weather[i].temp.day);

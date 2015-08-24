@@ -18,7 +18,6 @@ define(function(require){
 	function launchEvent () {
 	  zip = $('#searchField').val();
 	  $('#searchField').val('');
-	  console.log("zip", zip);
 	  if (zip.length !== 5) {
 	    console.log("Please enter a 5-digit code.");
 	  } 

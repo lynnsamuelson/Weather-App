@@ -15,6 +15,5 @@ define(function(require){
     };
     var fb = new Firebase("https://dld-weather.firebaseio.com/");
     fb.push({saveForecast});
-    console.log(saveForecast);
   });
 });
