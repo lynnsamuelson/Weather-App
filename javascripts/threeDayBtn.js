@@ -11,23 +11,33 @@ define(function(require){
 	$(document).on("click", ".threeDayBtn", function() {
 		console.log("click");
 		dayCounter += 2;
+		var weather = [];
 		threeDay(this.id).then(function(data){
-		  populateThreeDay(data.slice(1,3));
+			for (var i = 3; i < data.length; i += 8) {
+				weather.push(data[i]);
+			}
+		  populateThreeDay(weather.slice(0,2));
 		});
 	});
 
 	$(document).on("click", ".sevenDayBtn", function() {
-		console.log("click");
 		threeDay(this.id).then(function(data){
+			console.log("data :", data.length);	
+			var weather = [];
+			for (var i = 3; i < data.length; i += 8) {
+				weather.push(data[i]);
+			}		
+			console.log("weather :",weather);
 			if (dayCounter === 3) {
 				dayCounter += 4;
-				populateThreeDay(data.slice(3,7));
+				populateThreeDay(weather.slice(2,7));
+				populateThreeDay(weather);
 			};
 			if (dayCounter === 1) {	
 				dayCounter += 6;
-		    populateThreeDay(data.slice(1,7));
+		    populateThreeDay(weather.slice(1,7));
+		    populateThreeDay(weather);
 			};
 		});
 	});
-
 });	

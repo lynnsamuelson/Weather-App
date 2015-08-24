@@ -18,6 +18,8 @@ define(function(require) {
 			for (var i = 0; i < weather.length; i++) {
 				weather[i].main.temp = 
 				kelToFah(weather[i].main.temp);
+				weather[i].dt_txt =
+				weather[i].dt_txt.slice(5, 16); 
 			}
 	    deferred.resolve(weather);
 		}); 
