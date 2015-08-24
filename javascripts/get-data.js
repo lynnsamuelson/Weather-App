@@ -12,14 +12,15 @@ define(function(require) {
 		  method: "GET",
 		  data: JSON
 		}).done(function(data) {
-	    var weather = [{
-  	    date: new Date(data.dt),
-  	    temp: kelToFah(data.main.temp),
-  	    pressure: data.main.pressure,
-  	    current: data.weather,
-  	    speed: data.wind.speed,
-  	    coord: data.coord.lat + "&lon=" + data.coord.lon
-	    }];
+      var weather = [{
+        date: new Date(data.dt),
+        temp: kelToFah(data.main.temp),
+        pressure: data.main.pressure,
+        icon: "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png",
+        current: data.weather,
+        speed: data.wind.speed,
+        coord: data.coord.lat + "&lon=" + data.coord.lon
+      }];
       console.log(weather);
 	    deferred.resolve(weather);
 		}); 
